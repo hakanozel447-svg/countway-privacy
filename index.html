@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CountWay mobil bulmaca oyununun gizlilik politikası — hangi verilerin toplandığı, nasıl kullanıldığı ve kullanıcı hakları. Türkçe ve İngilizce.">
+<title>CountWay Gizlilik Politikası</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+  :root{
+    --bg:#f2f7f6;
+    --surface:#ffffff;
+    --text:#16302c;
+    --text-muted:#55726b;
+    --accent:#e6552f;
+    --accent-soft:#fdece5;
+    --border:#dfe9e6;
+    --star:#c9861f;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0e201e;
+      --surface:#16302c;
+      --text:#eef4f2;
+      --text-muted:#9fb8b2;
+      --accent:#ff9d80;
+      --accent-soft:rgba(255,157,128,.14);
+      --border:#23433d;
+      --star:#f0b84f;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e201e;
+    --surface:#16302c;
+    --text:#eef4f2;
+    --text-muted:#9fb8b2;
+    --accent:#ff9d80;
+    --accent-soft:rgba(255,157,128,.14);
+    --border:#23433d;
+    --star:#f0b84f;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;
+    line-height:1.65;
+    font-size:17px;
+  }
+  .wrap{max-width:740px;margin:0 auto;padding:0 24px 96px;}
+
+  header.top{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:28px 0 22px;border-bottom:1px solid var(--border);
+    margin-bottom:8px; gap:16px; flex-wrap:wrap;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand svg{width:30px;height:30px;flex:none;}
+  .brand span{
+    font-family:'Baloo 2',sans-serif;font-weight:700;font-size:20px;
+    letter-spacing:.2px;
+  }
+  .langtoggle{display:flex;gap:6px;background:var(--surface);border:1px solid var(--border);
+    border-radius:999px;padding:3px;}
+  .langtoggle button{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;
+    letter-spacing:.04em; border:none;background:transparent;color:var(--text-muted);
+    padding:6px 14px;border-radius:999px;cursor:pointer;transition:background .15s,color .15s;
+  }
+  .langtoggle button.active{background:var(--accent);color:#fff;}
+
+  .meta{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--text-muted);
+    display:flex;gap:18px;flex-wrap:wrap;margin:18px 0 34px;
+  }
+  .meta b{color:var(--text);font-weight:500;}
+
+  h1{
+    font-family:'Baloo 2',sans-serif;font-weight:700;font-size:clamp(28px,5vw,38px);
+    line-height:1.15;text-wrap:balance;margin:6px 0 6px;
+  }
+  .tagline{color:var(--text-muted);font-size:16px;margin:0 0 30px;max-width:60ch;}
+
+  nav.toc{
+    background:var(--surface);border:1px solid var(--border);border-radius:14px;
+    padding:18px 22px;margin-bottom:38px;
+  }
+  nav.toc p{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--text-muted);margin:0 0 10px;
+  }
+  nav.toc ol{margin:0;padding-left:1.2em;columns:2;column-gap:24px;}
+  nav.toc li{margin-bottom:6px;font-size:14.5px;}
+  nav.toc a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);}
+  nav.toc a:hover{border-color:var(--accent);color:var(--accent);}
+
+  section{margin-bottom:34px;scroll-margin-top:20px;}
+  h2{
+    font-family:'Baloo 2',sans-serif;font-weight:600;font-size:21px;
+    color:var(--text);margin:0 0 12px;display:flex;align-items:baseline;gap:10px;
+  }
+  h2 .num{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--accent);font-weight:500;}
+  p{margin:0 0 14px;max-width:66ch;}
+  ul{margin:0 0 14px;padding-left:1.3em;max-width:64ch;}
+  li{margin-bottom:6px;}
+  a{color:var(--accent);}
+
+  .callout{
+    background:var(--accent-soft);border-radius:12px;padding:16px 18px;
+    margin:0 0 16px;max-width:64ch;font-size:15.5px;
+  }
+  .callout b{color:var(--text);}
+
+  table{border-collapse:collapse;width:100%;margin:0 0 16px;font-size:14.5px;}
+  table :is(th,td){text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
+  th{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);font-weight:500;}
+
+  footer{
+    margin-top:52px;padding-top:26px;border-top:1px solid var(--border);
+    font-size:14.5px;color:var(--text-muted);
+  }
+  footer a{color:var(--accent);}
+
+  [data-lang]{display:none;}
+  [data-lang].active{display:block;}
+
+  @media (max-width:520px){
+    nav.toc ol{columns:1;}
+    .meta{gap:10px 18px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="100" height="100" rx="22" fill="var(--accent)" opacity="0.14"/>
+        <polyline points="26,74 43,62 50,40 73,29" fill="none" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="26" cy="74" r="6.5" fill="var(--accent)"/>
+        <circle cx="43" cy="62" r="5.5" fill="var(--accent)"/>
+        <circle cx="50" cy="40" r="5.5" fill="var(--accent)"/>
+        <circle cx="73" cy="29" r="8" fill="var(--accent)"/>
+      </svg>
+      <span>CountWay</span>
+    </div>
+    <div class="langtoggle" role="group" aria-label="Language">
+      <button type="button" data-set-lang="tr" class="active">TÜRKÇE</button>
+      <button type="button" data-set-lang="en">ENGLISH</button>
+    </div>
+  </header>
+
+  <!-- ============ TURKISH ============ -->
+  <div data-lang="tr" class="active">
+    <div class="meta"><span><b>Son güncelleme:</b> 1 Eylül 2026</span><span><b>Geliştirici:</b> CountWay Studio</span><span><b>İletişim:</b> hakanozel447@gmail.com</span></div>
+    <h1>Gizlilik Politikası</h1>
+    <p class="tagline">CountWay mobil bulmaca oyununu kullanırken hangi verilerin toplandığını, nasıl kullanıldığını ve haklarınızı açık şekilde anlatıyoruz.</p>
+
+    <div class="callout"><b>Kısaca:</b> CountWay'i oynamak için hesap açmanıza gerek yok. Oyun ilerlemeniz sadece cihazınızda saklanır. Reklam ve satın alma özellikleri kullanıldığında bu hizmetleri sağlayan Google'ın altyapısı üzerinden sınırlı, kişisel olmayan veriler işlenir — ayrıntılar aşağıda.</div>
+
+    <nav class="toc">
+      <p>İçindekiler</p>
+      <ol>
+        <li><a href="#tr-1">Hangi verileri topluyoruz</a></li>
+        <li><a href="#tr-2">Reklamlar ve AdMob</a></li>
+        <li><a href="#tr-3">Uygulama içi satın alımlar</a></li>
+        <li><a href="#tr-4">Cihazda saklanan veriler</a></li>
+        <li><a href="#tr-5">Çocukların gizliliği</a></li>
+        <li><a href="#tr-6">Verilerin paylaşımı</a></li>
+        <li><a href="#tr-7">Haklarınız</a></li>
+        <li><a href="#tr-8">Politika değişiklikleri</a></li>
+        <li><a href="#tr-9">Bize ulaşın</a></li>
+      </ol>
+    </nav>
+
+    <section id="tr-1">
+      <h2><span class="num">01</span>Hangi verileri topluyoruz</h2>
+      <p>CountWay, hesap oluşturmanızı gerektirmez; adınızı, e-postanızı veya benzeri kimlik bilgilerinizi doğrudan bizden toplamayız. Uygulamanın kendisi bir sunucuya bağlanmaz — bölüm ilerlemeniz, yıldızlarınız, jeton/elmas bakiyeniz ve tercihleriniz yalnızca cihazınızın yerel depolama alanında tutulur.</p>
+      <p>Reklam gösterimi ve uygulama içi satın alma gibi isteğe bağlı özellikleri kullandığınızda, bu hizmetleri sağlayan üçüncü taraflar (Google AdMob, Google Play Faturalandırma) kendi gizlilik politikaları kapsamında sınırlı teknik veri toplayabilir. Bu veriler bizim tarafımızdan değil, doğrudan bu hizmet sağlayıcılar tarafından işlenir.</p>
+    </section>
+
+    <section id="tr-2">
+      <h2><span class="num">02</span>Reklamlar ve AdMob</h2>
+      <p>CountWay, ödüllü video reklamları (jeton kazanmak için, isteğe bağlı) göstermek üzere <b>Google AdMob</b> kullanır. AdMob, reklamları kişiselleştirmek ve ölçmek için reklam kimliği (Advertising ID) gibi tanımlayıcıları kullanabilir. Bu verilerin nasıl işlendiğini <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a>'ndan inceleyebilirsiniz.</p>
+      <p>CountWay+ (VIP) aboneliğine sahip kullanıcılara reklam gösterilmez.</p>
+    </section>
+
+    <section id="tr-3">
+      <h2><span class="num">03</span>Uygulama içi satın alımlar</h2>
+      <p>Elmas paketleri, jeton paketleri ve CountWay+ aboneliği gibi satın alımlar <b>Google Play Faturalandırma (Google Play Billing)</b> üzerinden işlenir. Ödeme bilgileriniz (kart numarası vb.) bize hiçbir zaman ulaşmaz — bunlar doğrudan Google tarafından, Google'ın kendi gizlilik ve güvenlik standartlarına göre işlenir.</p>
+    </section>
+
+    <section id="tr-4">
+      <h2><span class="num">04</span>Cihazda saklanan veriler</h2>
+      <p>Aşağıdaki bilgiler yalnızca cihazınızda, uygulamanın yerel kayıt dosyasında tutulur ve tarafımıza gönderilmez:</p>
+      <table>
+        <tr><th>Veri</th><th>Amaç</th></tr>
+        <tr><td>Bölüm/seviye ilerlemesi, yıldızlar</td><td>Kaldığınız yerden devam edebilmeniz</td></tr>
+        <tr><td>Jeton, elmas, can bakiyesi</td><td>Oyun içi ekonominin korunması</td></tr>
+        <tr><td>Seçili tahta teması, VIP durumu</td><td>Tercihlerinizin hatırlanması</td></tr>
+        <tr><td>Kuruluma özel rastgelelik tohumu</td><td>Size özel, tutarlı bulmaca üretimi</td></tr>
+      </table>
+      <p>Uygulamayı sildiğinizde bu veriler cihazınızdan da silinir. Şu anda bulut yedekleme sunmuyoruz.</p>
+    </section>
+
+    <section id="tr-5">
+      <h2><span class="num">05</span>Çocukların gizliliği</h2>
+      <p>CountWay, genel kitleye yönelik bir bulmaca oyunudur ve özellikle çocuklara yönelik olarak tasarlanmamıştır. 13 yaşın altındaki kullanıcılardan bilerek kişisel veri toplamıyoruz. Bir çocuğun bize kişisel veri sağladığını düşünüyorsanız, aşağıdaki adresten bizimle iletişime geçin; ilgili veriyi derhal kaldıracağız.</p>
+    </section>
+
+    <section id="tr-6">
+      <h2><span class="num">06</span>Verilerin paylaşımı</h2>
+      <p>Verilerinizi satmıyoruz. Yukarıda belirtilen Google AdMob ve Google Play Faturalandırma dışında, verilerinizi üçüncü taraflarla paylaşmıyoruz. Yasal bir zorunluluk olması halinde (mahkeme kararı vb.) gerekli açıklamalar yapılabilir.</p>
+    </section>
+
+    <section id="tr-7">
+      <h2><span class="num">07</span>Haklarınız</h2>
+      <p>Cihazınızda tutulan verileri istediğiniz zaman uygulamayı silerek kaldırabilirsiniz. Google'ın işlediği verilerle ilgili haklarınız (erişim, silme vb.) için doğrudan Google'ın ilgili hesap ayarlarını kullanabilir veya bizimle iletişime geçebilirsiniz.</p>
+    </section>
+
+    <section id="tr-8">
+      <h2><span class="num">08</span>Politika değişiklikleri</h2>
+      <p>Bu politikayı zaman zaman güncelleyebiliriz. Önemli değişikliklerde bu sayfadaki "son güncelleme" tarihini yenileriz. Güncel sürüm her zaman bu sayfada yayınlanır.</p>
+    </section>
+
+    <section id="tr-9">
+      <h2><span class="num">09</span>Bize ulaşın</h2>
+      <p>Sorularınız için: <a href="mailto:hakanozel447@gmail.com">hakanozel447@gmail.com</a></p>
+    </section>
+  </div>
+
+  <!-- ============ ENGLISH ============ -->
+  <div data-lang="en">
+    <div class="meta"><span><b>Last updated:</b> September 1, 2026</span><span><b>Developer:</b> CountWay Studio</span><span><b>Contact:</b> hakanozel447@gmail.com</span></div>
+    <h1>Privacy Policy</h1>
+    <p class="tagline">A plain explanation of what data CountWay collects while you play, how it's used, and what choices you have.</p>
+
+    <div class="callout"><b>In short:</b> No account is required to play CountWay. Your progress is stored only on your device. When you use ads or in-app purchases, Google's infrastructure processes a limited amount of non-personal data on our behalf — details below.</div>
+
+    <nav class="toc">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#en-1">What we collect</a></li>
+        <li><a href="#en-2">Ads &amp; AdMob</a></li>
+        <li><a href="#en-3">In-app purchases</a></li>
+        <li><a href="#en-4">Data stored on your device</a></li>
+        <li><a href="#en-5">Children's privacy</a></li>
+        <li><a href="#en-6">Sharing of data</a></li>
+        <li><a href="#en-7">Your rights</a></li>
+        <li><a href="#en-8">Changes to this policy</a></li>
+        <li><a href="#en-9">Contact us</a></li>
+      </ol>
+    </nav>
+
+    <section id="en-1">
+      <h2><span class="num">01</span>What we collect</h2>
+      <p>CountWay doesn't require an account, and we don't directly collect your name, email, or similar identifying information. The app itself doesn't connect to a server — your chapter progress, stars, coin/diamond balance, and preferences are stored only in local storage on your device.</p>
+      <p>When you use optional features such as watching ads or making in-app purchases, the third parties providing those services (Google AdMob, Google Play Billing) may collect limited technical data under their own privacy policies. That data is processed directly by those providers, not by us.</p>
+    </section>
+
+    <section id="en-2">
+      <h2><span class="num">02</span>Ads &amp; AdMob</h2>
+      <p>CountWay uses <b>Google AdMob</b> to show optional rewarded video ads (to earn coins). AdMob may use identifiers such as the Advertising ID to personalize and measure ads. See the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> for details on how this data is handled.</p>
+      <p>Users with an active CountWay+ (VIP) subscription are not shown ads.</p>
+    </section>
+
+    <section id="en-3">
+      <h2><span class="num">03</span>In-app purchases</h2>
+      <p>Purchases such as diamond packs, coin packs, and the CountWay+ subscription are processed through <b>Google Play Billing</b>. Your payment details (card number, etc.) never reach us — they are handled directly by Google under Google's own privacy and security standards.</p>
+    </section>
+
+    <section id="en-4">
+      <h2><span class="num">04</span>Data stored on your device</h2>
+      <p>The following is kept only in the app's local save file on your device and is never sent to us:</p>
+      <table>
+        <tr><th>Data</th><th>Purpose</th></tr>
+        <tr><td>Chapter/level progress, stars</td><td>Letting you pick up where you left off</td></tr>
+        <tr><td>Coin, diamond, life balance</td><td>Keeping the in-game economy consistent</td></tr>
+        <tr><td>Selected board theme, VIP status</td><td>Remembering your preferences</td></tr>
+        <tr><td>Per-install randomness seed</td><td>Generating puzzles that are consistent for you</td></tr>
+      </table>
+      <p>Uninstalling the app removes this data from your device. We don't currently offer cloud backup.</p>
+    </section>
+
+    <section id="en-5">
+      <h2><span class="num">05</span>Children's privacy</h2>
+      <p>CountWay is a general-audience puzzle game and isn't specifically directed at children. We don't knowingly collect personal data from users under 13. If you believe a child has provided us with personal data, please contact us below and we'll remove it promptly.</p>
+    </section>
+
+    <section id="en-6">
+      <h2><span class="num">06</span>Sharing of data</h2>
+      <p>We don't sell your data. Other than Google AdMob and Google Play Billing as described above, we don't share your data with third parties, except where required by law (such as a valid court order).</p>
+    </section>
+
+    <section id="en-7">
+      <h2><span class="num">07</span>Your rights</h2>
+      <p>You can remove the data stored on your device at any time by uninstalling the app. For rights relating to data processed by Google (access, deletion, etc.), you can use your Google account settings directly or contact us.</p>
+    </section>
+
+    <section id="en-8">
+      <h2><span class="num">08</span>Changes to this policy</h2>
+      <p>We may update this policy from time to time. When we make material changes, we'll update the "last updated" date on this page. The current version is always published here.</p>
+    </section>
+
+    <section id="en-9">
+      <h2><span class="num">09</span>Contact us</h2>
+      <p>Questions? Reach us at <a href="mailto:hakanozel447@gmail.com">hakanozel447@gmail.com</a></p>
+    </section>
+  </div>
+
+  <footer>
+    CountWay — sayı bulmaca oyunu / number puzzle game. Bu sayfa Google Play Console ve App Store Connect'teki gizlilik politikası alanına bağlanabilir.
+  </footer>
+</div>
+
+<script>
+  (function(){
+    var buttons = document.querySelectorAll('[data-set-lang]');
+    var panels = document.querySelectorAll('[data-lang]');
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var lang = btn.getAttribute('data-set-lang');
+        buttons.forEach(function(b){ b.classList.toggle('active', b === btn); });
+        panels.forEach(function(p){ p.classList.toggle('active', p.getAttribute('data-lang') === lang); });
+        try { localStorage.setItem('countway_privacy_lang', lang); } catch(e){}
+      });
+    });
+    try {
+      var saved = localStorage.getItem('countway_privacy_lang');
+      if (saved === 'en') { document.querySelector('[data-set-lang="en"]').click(); }
+    } catch(e){}
+  })();
+</script>
+
+</body>
+</html>

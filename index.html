@@ -6,130 +6,162 @@
 <meta name="description" content="CountWay mobil bulmaca oyununun gizlilik politikası — hangi verilerin toplandığı, nasıl kullanıldığı ve kullanıcı hakları. Türkçe ve İngilizce.">
 <title>CountWay Gizlilik Politikası</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap');
+
+  /* CountWay gizlilik sayfası — oyunun kendi paleti (UiTheme.gd):
+     LEVEL_BG #0038A8, TILE #1D4ED8, GOLD #F5A623/#FFD13B, VIP #2de1c2.
+     Başlıklar Fredoka (oyunun birincil yazı tipi), uzun metin Nunito
+     (o da projede var) — Fredoka bir gösteri yazı tipi, sayfalarca
+     hukuki metinde yorucu olurdu. */
 
   :root{
-    --bg:#f2f7f6;
-    --surface:#ffffff;
-    --text:#16302c;
-    --text-muted:#55726b;
-    --accent:#e6552f;
-    --accent-soft:#fdece5;
-    --border:#dfe9e6;
-    --star:#c9861f;
+    --bg:#F4F7FF;
+    --surface:#FFFFFF;
+    --text:#0B1F52;
+    --text-muted:#5A6E9E;
+    --accent:#1D4ED8;
+    --accent-soft:#E7EDFF;
+    --border:#DCE4F7;
+    --star:#F5A623;
+    --band:linear-gradient(160deg,#0038A8 0%,#1D4ED8 100%);
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --bg:#0e201e;
-      --surface:#16302c;
-      --text:#eef4f2;
-      --text-muted:#9fb8b2;
-      --accent:#ff9d80;
-      --accent-soft:rgba(255,157,128,.14);
-      --border:#23433d;
-      --star:#f0b84f;
+      --bg:#071233;
+      --surface:#0E1E4A;
+      --text:#EAF0FF;
+      --text-muted:#9FB2DE;
+      --accent:#7BA2FF;
+      --accent-soft:rgba(123,162,255,.14);
+      --border:#1C2F63;
+      --star:#FFD13B;
+      --band:linear-gradient(160deg,#001C55 0%,#0B2E7A 100%);
     }
   }
   :root[data-theme="dark"]{
-    --bg:#0e201e;
-    --surface:#16302c;
-    --text:#eef4f2;
-    --text-muted:#9fb8b2;
-    --accent:#ff9d80;
-    --accent-soft:rgba(255,157,128,.14);
-    --border:#23433d;
-    --star:#f0b84f;
+    --bg:#071233; --surface:#0E1E4A; --text:#EAF0FF; --text-muted:#9FB2DE;
+    --accent:#7BA2FF; --accent-soft:rgba(123,162,255,.14); --border:#1C2F63;
+    --star:#FFD13B; --band:linear-gradient(160deg,#001C55 0%,#0B2E7A 100%);
   }
 
   *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
   body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;
-    line-height:1.65;
-    font-size:17px;
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
+    font-size:17px; line-height:1.72; letter-spacing:.005em;
   }
-  .wrap{max-width:740px;margin:0 auto;padding:0 24px 96px;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 16px 64px;}
 
-  header.top{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:28px 0 22px;border-bottom:1px solid var(--border);
-    margin-bottom:8px; gap:16px; flex-wrap:wrap;
+  /* ---- üst bant ---- */
+  .top{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:16px; flex-wrap:wrap;
+    margin:0 -16px 28px; padding:18px 20px;
+    background:var(--band);
+    border-bottom:4px solid var(--star);
   }
-  .brand{display:flex;align-items:center;gap:10px;}
-  .brand svg{width:30px;height:30px;flex:none;}
+  .brand{display:flex; align-items:center;}
   .brand span{
-    font-family:'Baloo 2',sans-serif;font-weight:700;font-size:20px;
-    letter-spacing:.2px;
+    font-family:'Fredoka',sans-serif; font-weight:700; font-size:23px;
+    color:#fff; letter-spacing:.01em;
   }
-  .langtoggle{display:flex;gap:6px;background:var(--surface);border:1px solid var(--border);
-    border-radius:999px;padding:3px;}
+  .langtoggle{display:flex; gap:6px;}
   .langtoggle button{
-    font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;
-    letter-spacing:.04em; border:none;background:transparent;color:var(--text-muted);
-    padding:6px 14px;border-radius:999px;cursor:pointer;transition:background .15s,color .15s;
+    font-family:'Fredoka',sans-serif; font-weight:600; font-size:12.5px;
+    letter-spacing:.06em; cursor:pointer;
+    padding:8px 15px; border-radius:999px;
+    border:1.5px solid rgba(255,255,255,.42);
+    background:transparent; color:rgba(255,255,255,.88);
+    transition:background .15s, color .15s, border-color .15s;
   }
-  .langtoggle button.active{background:var(--accent);color:#fff;}
+  .langtoggle button:hover{background:rgba(255,255,255,.14);}
+  .langtoggle button.active{
+    background:var(--star); border-color:var(--star); color:#30210A;
+  }
 
+  /* ---- başlık bloğu ---- */
   .meta{
-    font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--text-muted);
-    display:flex;gap:18px;flex-wrap:wrap;margin:18px 0 34px;
+    display:flex; flex-wrap:wrap; gap:6px 20px;
+    font-size:13.5px; color:var(--text-muted); margin-bottom:14px;
   }
-  .meta b{color:var(--text);font-weight:500;}
-
+  .meta b{color:var(--text); font-weight:700;}
   h1{
-    font-family:'Baloo 2',sans-serif;font-weight:700;font-size:clamp(28px,5vw,38px);
-    line-height:1.15;text-wrap:balance;margin:6px 0 6px;
+    font-family:'Fredoka',sans-serif; font-weight:700;
+    font-size:clamp(30px,7vw,42px); line-height:1.15;
+    margin:0 0 10px; letter-spacing:-.01em;
   }
-  .tagline{color:var(--text-muted);font-size:16px;margin:0 0 30px;max-width:60ch;}
+  .tagline{
+    font-size:17.5px; color:var(--text-muted);
+    margin:0 0 26px; max-width:58ch;
+  }
 
-  nav.toc{
-    background:var(--surface);border:1px solid var(--border);border-radius:14px;
-    padding:18px 22px;margin-bottom:38px;
-  }
-  nav.toc p{
-    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--text-muted);margin:0 0 10px;
-  }
-  nav.toc ol{margin:0;padding-left:1.2em;columns:2;column-gap:24px;}
-  nav.toc li{margin-bottom:6px;font-size:14.5px;}
-  nav.toc a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);}
-  nav.toc a:hover{border-color:var(--accent);color:var(--accent);}
-
-  section{margin-bottom:34px;scroll-margin-top:20px;}
-  h2{
-    font-family:'Baloo 2',sans-serif;font-weight:600;font-size:21px;
-    color:var(--text);margin:0 0 12px;display:flex;align-items:baseline;gap:10px;
-  }
-  h2 .num{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--accent);font-weight:500;}
-  p{margin:0 0 14px;max-width:66ch;}
-  ul{margin:0 0 14px;padding-left:1.3em;max-width:64ch;}
-  li{margin-bottom:6px;}
-  a{color:var(--accent);}
-
+  /* ---- özet kutusu ---- */
   .callout{
-    background:var(--accent-soft);border-radius:12px;padding:16px 18px;
-    margin:0 0 16px;max-width:64ch;font-size:15.5px;
+    background:var(--accent-soft);
+    border:1px solid var(--border);
+    border-left:5px solid var(--accent);
+    border-radius:14px; padding:17px 19px;
+    margin:0 0 30px; font-size:16px;
   }
-  .callout b{color:var(--text);}
+  .callout b{font-family:'Fredoka',sans-serif; font-weight:600; color:var(--accent);}
 
-  table{border-collapse:collapse;width:100%;margin:0 0 16px;font-size:14.5px;}
-  table :is(th,td){text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
-  th{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);font-weight:500;}
+  /* ---- içindekiler ---- */
+  .toc{
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:16px; padding:20px 22px; margin:0 0 38px;
+  }
+  .toc > p{
+    font-family:'Fredoka',sans-serif; font-weight:600; font-size:13px;
+    letter-spacing:.09em; text-transform:uppercase;
+    color:var(--text-muted); margin:0 0 12px;
+  }
+  .toc ol{margin:0; padding-left:20px;}
+  .toc li{margin:5px 0;}
+  .toc a{color:var(--text); text-decoration:none; border-bottom:1px solid transparent;}
+  .toc a:hover{color:var(--accent); border-bottom-color:var(--accent);}
+
+  /* ---- bölümler ---- */
+  section{
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:16px; padding:22px 24px; margin:0 0 16px;
+    scroll-margin-top:16px;
+  }
+  h2{
+    display:flex; align-items:center; gap:12px;
+    font-family:'Fredoka',sans-serif; font-weight:600;
+    font-size:21px; line-height:1.3; margin:0 0 12px;
+  }
+  .num{
+    flex:none; display:inline-flex; align-items:center; justify-content:center;
+    min-width:34px; height:34px; border-radius:10px;
+    background:var(--accent); color:#fff;
+    font-size:14px; font-weight:700; letter-spacing:.02em;
+  }
+  section p{margin:0 0 12px;}
+  section p:last-child{margin-bottom:0;}
+  section ul{margin:0 0 12px; padding-left:22px;}
+  section li{margin:6px 0;}
+  a{color:var(--accent); text-decoration:underline; text-underline-offset:2px;}
+  a:hover{color:var(--text);}
+  b,strong{font-weight:700;}
 
   footer{
-    margin-top:52px;padding-top:26px;border-top:1px solid var(--border);
-    font-size:14.5px;color:var(--text-muted);
+    margin-top:36px; padding-top:22px; border-top:1px solid var(--border);
+    font-size:13.5px; color:var(--text-muted); text-align:center;
   }
-  footer a{color:var(--accent);}
 
   [data-lang]{display:none;}
   [data-lang].active{display:block;}
 
   @media (max-width:520px){
-    nav.toc ol{columns:1;}
-    .meta{gap:10px 18px;}
+    body{font-size:16px;}
+    .wrap{padding:0 14px 48px;}
+    .top{margin:0 -14px 22px; padding:15px 16px;}
+    .brand span{font-size:20px;}
+    section{padding:18px 17px; border-radius:14px;}
+    h2{font-size:19px; gap:10px;}
+    .num{min-width:30px; height:30px; font-size:13px;}
   }
 </style>
 </head>
@@ -137,14 +169,6 @@
 <div class="wrap">
   <header class="top">
     <div class="brand">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect width="100" height="100" rx="22" fill="var(--accent)" opacity="0.14"/>
-        <polyline points="26,74 43,62 50,40 73,29" fill="none" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="26" cy="74" r="6.5" fill="var(--accent)"/>
-        <circle cx="43" cy="62" r="5.5" fill="var(--accent)"/>
-        <circle cx="50" cy="40" r="5.5" fill="var(--accent)"/>
-        <circle cx="73" cy="29" r="8" fill="var(--accent)"/>
-      </svg>
       <span>CountWay</span>
     </div>
     <div class="langtoggle" role="group" aria-label="Language">
@@ -155,7 +179,7 @@
 
   <!-- ============ TURKISH ============ -->
   <div data-lang="tr" class="active">
-    <div class="meta"><span><b>Son güncelleme:</b> 1 Eylül 2026</span><span><b>Geliştirici:</b> CountWay Studio</span><span><b>İletişim:</b> hakanozel447@gmail.com</span></div>
+    <div class="meta"><span><b>Son güncelleme:</b> 30 Eylül 2026</span><span><b>Geliştirici:</b> CountWay Studio</span><span><b>İletişim:</b> kurtku-ozel@hotmail.com</span></div>
     <h1>Gizlilik Politikası</h1>
     <p class="tagline">CountWay mobil bulmaca oyununu kullanırken hangi verilerin toplandığını, nasıl kullanıldığını ve haklarınızı açık şekilde anlatıyoruz.</p>
 
@@ -178,7 +202,7 @@
 
     <section id="tr-1">
       <h2><span class="num">01</span>Hangi verileri topluyoruz</h2>
-      <p>CountWay, hesap oluşturmanızı gerektirmez; adınızı, e-postanızı veya benzeri kimlik bilgilerinizi doğrudan bizden toplamayız. Uygulamanın kendisi bir sunucuya bağlanmaz — bölüm ilerlemeniz, yıldızlarınız, jeton/elmas bakiyeniz ve tercihleriniz yalnızca cihazınızın yerel depolama alanında tutulur.</p>
+      <p>CountWay, hesap oluşturmanızı gerektirmez; adınızı, e-postanızı veya benzeri kimlik bilgilerinizi doğrudan bizden toplamayız. Uygulama, oyun verilerinizi hiçbir sunucuya göndermez — bölüm ilerlemeniz, yıldızlarınız, jeton/elmas bakiyeniz ve tercihleriniz yalnızca cihazınızın yerel depolama alanında tutulur.</p>
       <p>Reklam gösterimi ve uygulama içi satın alma gibi isteğe bağlı özellikleri kullandığınızda, bu hizmetleri sağlayan üçüncü taraflar (Google AdMob, Google Play Faturalandırma) kendi gizlilik politikaları kapsamında sınırlı teknik veri toplayabilir. Bu veriler bizim tarafımızdan değil, doğrudan bu hizmet sağlayıcılar tarafından işlenir.</p>
     </section>
 
@@ -208,7 +232,9 @@
 
     <section id="tr-5">
       <h2><span class="num">05</span>Çocukların gizliliği</h2>
-      <p>CountWay, genel kitleye yönelik bir bulmaca oyunudur ve özellikle çocuklara yönelik olarak tasarlanmamıştır. 13 yaşın altındaki kullanıcılardan bilerek kişisel veri toplamıyoruz. Bir çocuğun bize kişisel veri sağladığını düşünüyorsanız, aşağıdaki adresten bizimle iletişime geçin; ilgili veriyi derhal kaldıracağız.</p>
+      <p>CountWay, genel kitleye yönelik bir bulmaca oyunudur ve özellikle çocuklara yönelik olarak tasarlanmamıştır. 16 yaşın altındaki kullanıcılardan bilerek kişisel veri toplamıyoruz.</p>
+      <p>Uygulama ilk açılışta doğum yılınızı sorar. <b>16 yaşın altında olduğunuzu belirtirseniz veya yaşınız bilinmiyorsa, size hiçbir reklam gösterilmez</b> — reklam SDK'sı hiç başlatılmaz, dolayısıyla reklam kimliğiniz okunmaz ve reklam amacıyla hiçbir veri toplanmaz. Kişiselleştirilmiş reklam da, kişiselleştirilmemiş reklam da gösterilmez.</p>
+      <p>Bu eşik, Avrupa Birliği Genel Veri Koruma Tüzüğü'nün (GDPR) dijital onay yaşı için öngördüğü en yüksek değerdir; üye ülkelerin belirlediği alt sınırların tamamını karşılar. Bir çocuğun bize kişisel veri sağladığını düşünüyorsanız, aşağıdaki adresten bizimle iletişime geçin; ilgili veriyi derhal kaldıracağız.</p>
     </section>
 
     <section id="tr-6">
@@ -228,13 +254,13 @@
 
     <section id="tr-9">
       <h2><span class="num">09</span>Bize ulaşın</h2>
-      <p>Sorularınız için: <a href="mailto:hakanozel447@gmail.com">hakanozel447@gmail.com</a></p>
+      <p>Sorularınız için: <a href="mailto:kurtku-ozel@hotmail.com">kurtku-ozel@hotmail.com</a></p>
     </section>
   </div>
 
   <!-- ============ ENGLISH ============ -->
   <div data-lang="en">
-    <div class="meta"><span><b>Last updated:</b> September 1, 2026</span><span><b>Developer:</b> CountWay Studio</span><span><b>Contact:</b> hakanozel447@gmail.com</span></div>
+    <div class="meta"><span><b>Last updated:</b> September 30, 2026</span><span><b>Developer:</b> CountWay Studio</span><span><b>Contact:</b> kurtku-ozel@hotmail.com</span></div>
     <h1>Privacy Policy</h1>
     <p class="tagline">A plain explanation of what data CountWay collects while you play, how it's used, and what choices you have.</p>
 
@@ -257,7 +283,7 @@
 
     <section id="en-1">
       <h2><span class="num">01</span>What we collect</h2>
-      <p>CountWay doesn't require an account, and we don't directly collect your name, email, or similar identifying information. The app itself doesn't connect to a server — your chapter progress, stars, coin/diamond balance, and preferences are stored only in local storage on your device.</p>
+      <p>CountWay doesn't require an account, and we don't directly collect your name, email, or similar identifying information. The app never sends your game data to any server — your chapter progress, stars, coin/diamond balance, and preferences are stored only in local storage on your device.</p>
       <p>When you use optional features such as watching ads or making in-app purchases, the third parties providing those services (Google AdMob, Google Play Billing) may collect limited technical data under their own privacy policies. That data is processed directly by those providers, not by us.</p>
     </section>
 
@@ -287,7 +313,9 @@
 
     <section id="en-5">
       <h2><span class="num">05</span>Children's privacy</h2>
-      <p>CountWay is a general-audience puzzle game and isn't specifically directed at children. We don't knowingly collect personal data from users under 13. If you believe a child has provided us with personal data, please contact us below and we'll remove it promptly.</p>
+      <p>CountWay is a general-audience puzzle game and isn't specifically directed at children. We don't knowingly collect personal data from users under 16.</p>
+      <p>The app asks for your birth year on first launch. <b>If you indicate that you are under 16, or your age is unknown, you are shown no ads at all</b> — the ad SDK is never initialised, so your advertising identifier is never read and no data is collected for advertising purposes. Neither personalised nor non-personalised ads are shown.</p>
+      <p>This threshold is the highest digital age of consent permitted under the EU General Data Protection Regulation (GDPR), and therefore satisfies every lower limit set by individual member states. If you believe a child has provided us with personal data, please contact us below and we'll remove it promptly.</p>
     </section>
 
     <section id="en-6">
@@ -307,7 +335,7 @@
 
     <section id="en-9">
       <h2><span class="num">09</span>Contact us</h2>
-      <p>Questions? Reach us at <a href="mailto:hakanozel447@gmail.com">hakanozel447@gmail.com</a></p>
+      <p>Questions? Reach us at <a href="mailto:kurtku-ozel@hotmail.com">kurtku-ozel@hotmail.com</a></p>
     </section>
   </div>
 
